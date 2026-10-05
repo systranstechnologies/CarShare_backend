@@ -1,0 +1,5 @@
+ALTER TABLE tickets ADD COLUMN priority VARCHAR(20) NOT NULL DEFAULT 'NORMAL';
+
+UPDATE tickets
+SET priority = 'URGENT'
+WHERE category = 'SAFETY_INCIDENT';

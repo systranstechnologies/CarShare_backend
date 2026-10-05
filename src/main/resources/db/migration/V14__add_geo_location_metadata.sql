@@ -1,0 +1,13 @@
+ALTER TABLE locations ADD COLUMN osm_id VARCHAR(100) NULL;
+ALTER TABLE locations ADD COLUMN display_name VARCHAR(500) NULL;
+ALTER TABLE locations ADD COLUMN latitude DECIMAL(10,8) NULL;
+ALTER TABLE locations ADD COLUMN longitude DECIMAL(11,8) NULL;
+ALTER TABLE locations ADD COLUMN bounding_box TEXT NULL;
+ALTER TABLE locations ADD COLUMN city VARCHAR(200) NULL;
+ALTER TABLE locations ADD COLUMN country VARCHAR(200) NULL;
+ALTER TABLE locations ADD COLUMN location_type VARCHAR(50) NULL;
+ALTER TABLE locations ADD COLUMN geofence_radius INT NOT NULL DEFAULT 1000;
+CREATE INDEX idx_locations_district ON locations (district);
+CREATE INDEX idx_locations_state_district ON locations (state, district);
+CREATE INDEX idx_locations_coordinates ON locations (latitude, longitude);
+CREATE INDEX idx_locations_osm_id ON locations (osm_id);

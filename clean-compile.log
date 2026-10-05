@@ -1,0 +1,26 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.carpool:backend >-------------------------
+[INFO] Building carpool-backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ backend ---
+[INFO] Deleting D:\Project\GIT SOURCE\latest\28082026\backend\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ backend ---
+[INFO] Copying 4 resources from src\main\resources to target\classes
+[INFO] Copying 28 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 196 source files with javac [debug parameters release 17] to target\classes
+[WARNING] /D:/Project/GIT SOURCE/latest/28082026/backend/src/main/java/com/carpool/dto/ride/CreateMultiStopRideRequest.java:[70,21] @Builder will ignore the initializing expression entirely. If you want the initializing expression to serve as default, add @Builder.Default. If it is not supposed to be settable during building, make the field final.
+[INFO] /D:/Project/GIT SOURCE/latest/28082026/backend/src/main/java/com/carpool/dto/ApiResponse.java: Some input files use unchecked or unsafe operations.
+[INFO] /D:/Project/GIT SOURCE/latest/28082026/backend/src/main/java/com/carpool/dto/ApiResponse.java: Recompile with -Xlint:unchecked for details.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  25.760 s
+[INFO] Finished at: 2026-08-29T12:16:11+05:30
+[INFO] ------------------------------------------------------------------------
