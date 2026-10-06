@@ -145,13 +145,18 @@ public class DiditIntegrationService {
         payload.put("new_status", newStatus);
         if (comment != null && !comment.isBlank()) payload.put("comment", comment.trim());
         try {
+            String payloadJson = objectMapper.writeValueAsString(payload);
             RestClient.builder().baseUrl(properties.getBaseUrl()).build().patch()
                 .uri("/v3/session/{sessionId}/update-status/", sessionId)
                 .contentType(MediaType.APPLICATION_JSON)
                 .header("x-api-key", properties.getApiKey())
-                .body(payload)
+                .body(payloadJson)
                 .retrieve()
                 .toBodilessEntity();
+        } catch (JsonProcessingException ex) {
+            log.error("Unable to serialize Didit status update for session {}", sessionId, ex);
+            throw new AppException(HttpStatus.INTERNAL_SERVER_ERROR, "DIDIT_PAYLOAD_ERROR",
+                "Unable to prepare Didit status update", ex);
         } catch (RestClientResponseException ex) {
             log.error("Didit status update rejected for session {}: status={}, body={}", sessionId,
                 ex.getStatusCode().value(), ex.getResponseBodyAsString());
