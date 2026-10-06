@@ -49,6 +49,7 @@ app:
       - "https://localhost"
       # UAT frontend origin - replace or add additional origins as needed
       - "https://carshareuat.netlify.app"
+      - "https://carshare247.online"
       - "capacitor://localhost"
 
   # You can override these via environment variables in production, for example:

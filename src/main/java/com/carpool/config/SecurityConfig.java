@@ -75,6 +75,7 @@ public class SecurityConfig {
         allowedOrigins.add("http://localhost:*");
         allowedOrigins.add("http://127.0.0.1:*");
         allowedOrigins.add("https://carshareuat.netlify.app");
+        allowedOrigins.add("https://carshare247.online");
         configuration.setAllowedOriginPatterns(new java.util.ArrayList<>(allowedOrigins));
         configuration.setAllowedMethods(java.util.List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(java.util.List.of("Authorization", "Content-Type", "X-Requested-With", "Accept", "Origin"));
